@@ -1,0 +1,8 @@
+flask
+future>=0.15.2
+urllib3>=1.8.3
+certifi==2016.9.26
+xlwt==1.1.2
+requests==2.11.1
+python-telegram-bot==5.0.0
+psycopg2==2.6.2
