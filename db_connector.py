@@ -3,15 +3,16 @@
 import psycopg2 as db
 from os import environ
 
-host = environ['OPENSHIFT_POSTGRESQL_DB_HOST']
+# host = environ['OPENSHIFT_POSTGRESQL_DB_HOST']
 # c = db.connect("host='ec2-54-247-119-94.eu-west-1.compute.amazonaws.com'"
 #                "dbname='dbaj1fb1ian3ve' "
 #                "user='zlkllrubxwxjik' "
 #                "password='EH_UQI5UZMpBpBJb7t7f-Xabfn'")
-c = db.connect("host='%s'"
-               "dbname='sampledb' "
-               "user='user7EN' "
-               "password='2w1tCKGoaNkKeo45'" % host)
+c = db.connect(
+    "host='127.0.0.1'"
+    "dbname='sampledb' "
+    "user='user7EN' "
+    "password='2w1tCKGoaNkKeo45'")
 # c = db.connect(database="luckyhandbot.db", check_same_thread=False)
 
 sql = c.cursor()
