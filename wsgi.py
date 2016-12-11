@@ -23,9 +23,9 @@ from flask import Flask, request
 from telegram import Update
 
 
-application = Flask(__name__, instance_path=os.environ['OPENSHIFT_REPO_DIR'])
+application = Flask(__name__, instance_path=os.environ['HOME'])
 update_queue, bot_instance = bot.setup(webhook_url='https://{}/{}'.format(
-    os.environ['OPENSHIFT_GEAR_DNS'],
+    'http://wsgi-luckyhand.44fs.preview.openshiftapps.com',
     bot.TOKEN
 ))
 
@@ -44,6 +44,6 @@ def webhook():
 
 
 if __name__ == '__main__':
-    ip = os.environ['OPENSHIFT_PYTHON_IP']
-    port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
+    ip = os.environ['WSGI_SERVICE_HOST']
+    port = int(os.environ['WSGI_SERVICE_PORT_8080_TCP'])
     application.run(host=ip, port=port)
