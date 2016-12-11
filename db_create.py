@@ -20,7 +20,7 @@ from db_connector import sql, c
 #             ')')
 # c.commit()
 sql.execute(
-    'INSERT"INTO users (id, user_id, name, state,lang, diamond, dollar, rouble, last_game_time, last_game_currency, last_game_id, diamond_request_time, ik_num, referral_user_id) VALUES "
+    "INSERT INTO users (id, user_id, name, state,lang, diamond, dollar, rouble, last_game_time, last_game_currency, last_game_id, diamond_request_time, ik_num, referral_user_id) VALUES "
     "(1, 60558942, '@risun', 'MENU', 'RUS', 300,2.94,20.2, '2016-10-15 04:08:10', 'diamond', 211, NULL, 8, NULL), "
     "(2, 0, 'BOT', 'PLAY_AGAIN', 'ENG', 997779,999999.0,999997.0, NULL, NULL, 218, NULL, 0, NULL), "
     "(5, 267178646, 'Jeremy', 'MENU', 'GER', 1007, 0.0, 0.0, '2016-10-12 12:25:20', 'diamond', 136, NULL, 0,267178646), "
