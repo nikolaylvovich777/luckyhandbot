@@ -47,7 +47,8 @@ def webhook():
 
 if __name__ == '__main__':
     ip = os.environ['WSGI_SERVICE_HOST']
-    port = int(os.environ['WSGI_SERVICE_PORT_8080_TCP'])
+    # port = int(os.environ['WSGI_SERVICE_PORT_8080_TCP'])
     print(ip)
-    print(port)
+    # print(port)
+    port = None
     application.run(host=ip, port=port)
