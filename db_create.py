@@ -2,7 +2,7 @@ from db_connector import sql, c
 
 sql.execute('CREATE TABLE users '
             '( '
-            'id integer NOT NULL DEFAULT nextval(\'user_id_seq\'::regclass), '
+            'id serial NOT NULL, '
             'user_id integer NOT NULL, '
             'name text COLLATE pg_catalog."default" NOT NULL, '
             'state text COLLATE pg_catalog."default", '
@@ -144,7 +144,7 @@ sql.execute(
 print('users done!')
 sql.execute('CREATE TABLE game '
             '( '
-            'id integer NOT NULL DEFAULT nextval(\'game_id_seq\'::regclass), '
+            'id serial NOT NULL, '
             'opponent1_id integer, '
             'opponent2_id integer, '
             'opponent1_choose text COLLATE pg_catalog."default", '
@@ -156,7 +156,7 @@ c.commit()
 print('game done!')
 sql.execute('CREATE TABLE add_balance_requests '
             '('
-            'id integer NOT NULL DEFAULT nextval(\'add_balance_requests_id_seq\'::regclass), '
+            'id serial NOT NULL, '
             'admin_user_id integer NOT NULL, '
             'user_id integer NOT NULL, '
             'sum real, '
@@ -169,7 +169,7 @@ c.commit()
 print('add_balance_requests done!')
 sql.execute('CREATE TABLE feedback'
             '('
-            'id integer NOT NULL DEFAULT nextval(\'feedback_id_seq\'::regclass), '
+            'id serial NOT NULL, '
             'feedback_user_id bigint NOT NULL, '
             'date text COLLATE pg_catalog."default" NOT NULL, '
             'text text COLLATE pg_catalog."default", '
