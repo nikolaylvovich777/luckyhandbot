@@ -10,8 +10,8 @@ host = environ['POSTGRESQL_SERVICE_HOST']
 #                "password='EH_UQI5UZMpBpBJb7t7f-Xabfn'")
 c = db.connect("host='%s'"
                "dbname='sampledb' "
-               "user='user7EN' "
-               "password='2w1tCKGoaNkKeo45'" % host)
+               "user='userL0G' "
+               "password='iXMTnXJnPhOCGn4Q'" % host)
 # c = db.connect(database="luckyhandbot.db", check_same_thread=False)
 
 sql = c.cursor()
