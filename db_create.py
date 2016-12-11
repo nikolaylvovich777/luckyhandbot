@@ -1,24 +1,24 @@
 from db_connector import sql, c
 
-sql.execute('CREATE TABLE users '
-            '( '
-            'id serial NOT NULL, '
-            'user_id integer NOT NULL, '
-            'name text COLLATE pg_catalog."default" NOT NULL, '
-            'state text COLLATE pg_catalog."default", '
-            'lang text COLLATE pg_catalog."default", '
-            'diamond integer, '
-            'dollar real, '
-            'rouble real, '
-            'last_game_time text COLLATE pg_catalog."default", '
-            'last_game_currency text COLLATE pg_catalog."default", '
-            'last_game_id integer, '
-            'diamond_request_time text COLLATE pg_catalog."default", '
-            'ik_num integer NOT NULL DEFAULT 0, '
-            'referral_user_id integer,'
-            ' CONSTRAINT user_pkey PRIMARY KEY (id) '
-            ')')
-c.commit()
+# sql.execute('CREATE TABLE users '
+#             '( '
+#             'id serial NOT NULL, '
+#             'user_id integer NOT NULL, '
+#             'name text COLLATE pg_catalog."default" NOT NULL, '
+#             'state text COLLATE pg_catalog."default", '
+#             'lang text COLLATE pg_catalog."default", '
+#             'diamond integer, '
+#             'dollar real, '
+#             'rouble real, '
+#             'last_game_time text COLLATE pg_catalog."default", '
+#             'last_game_currency text COLLATE pg_catalog."default", '
+#             'last_game_id integer, '
+#             'diamond_request_time text COLLATE pg_catalog."default", '
+#             'ik_num integer NOT NULL DEFAULT 0, '
+#             'referral_user_id integer,'
+#             ' CONSTRAINT user_pkey PRIMARY KEY (id) '
+#             ')')
+# c.commit()
 sql.execute(
     'INSERT INTO users (id, user_id, name, state,lang, diamond, dollar, rouble, last_game_time, last_game_currency, last_game_id, diamond_request_time, ik_num, referral_user_id) VALUES '
     '(1,60558942,"@risun","MENU","RUS",300,2.94,20.2,"2016-10-15 04:08:10","diamond",211," ",8," "), '
