@@ -140,15 +140,16 @@ sql.execute(
     "(119, 286458671, '@Adityayuan', 'MENU', 'ENG', 340, 0.0, 0.0, '2016-10-15 10:14:10', 'diamond', 213, NULL, 0,262154702), "
     "(120, 208628344, '@JohnnyElColombiano', 'MONEY_INPUT', 'ESP', 0, 0.0, 0.0, '2016-10-15 13:25:26', 'diamond', 218, '2016-10-15 13:25:29', 1, NULL);"
     )
+c.commit()
 print('users done!')
 sql.execute('CREATE TABLE game '
             '( '
             'id serial NOT NULL, '
             'opponent1_id integer, '
             'opponent2_id integer, '
-            'opponent1_choose text COLLATE pg_catalog.'default', '
-            'opponent2_choose text COLLATE pg_catalog.'default', '
-            'start_time text COLLATE pg_catalog.'default', '
+            'opponent1_choose text COLLATE pg_catalog.\'default\', '
+            'opponent2_choose text COLLATE pg_catalog.\'default\', '
+            'start_time text COLLATE pg_catalog.\'default\', '
             'CONSTRAINT game_pkey PRIMARY KEY (id) '
             ')')
 c.commit()
@@ -159,8 +160,8 @@ sql.execute('CREATE TABLE add_balance_requests '
             'admin_user_id integer NOT NULL, '
             'user_id integer NOT NULL, '
             'sum real, '
-            'currency text COLLATE pg_catalog.'default', '
-            'date text COLLATE pg_catalog.'default', '
+            'currency text COLLATE pg_catalog.\'default\', '
+            'date text COLLATE pg_catalog.\'default\', '
             'done integer NOT NULL DEFAULT 0, '
             'CONSTRAINT add_balance_requests_pkey PRIMARY KEY (id) '
             ')')
@@ -170,10 +171,10 @@ sql.execute('CREATE TABLE feedback'
             '('
             'id serial NOT NULL, '
             'feedback_user_id bigint NOT NULL, '
-            'date text COLLATE pg_catalog.'default' NOT NULL, '
-            'text text COLLATE pg_catalog.'default', '
+            'date text COLLATE pg_catalog.\'default\' NOT NULL, '
+            'text text COLLATE pg_catalog.\'default\', '
             'author bigint NOT NULL, '
-            'author_name text COLLATE pg_catalog.'default' NOT NULL, '
+            'author_name text COLLATE pg_catalog.\'default\' NOT NULL, '
             'message_id bigint, '
             'query_id bigint, '
             'CONSTRAINT feedback_pkey PRIMARY KEY (id) '
