@@ -1,5 +1,5 @@
-from db_connector import sql, c
-
+# from db_connector import sql, c
+#
 # sql.execute('CREATE TABLE users '
 #             '( '
 #             'id serial NOT NULL, '
@@ -142,43 +142,43 @@ from db_connector import sql, c
 #     )
 # c.commit()
 # print('users done!')
-sql.execute('CREATE TABLE game '
-            '( '
-            'id serial NOT NULL, '
-            'opponent1_id integer, '
-            'opponent2_id integer, '
-            'opponent1_choose text COLLATE pg_catalog."default", '
-            'opponent2_choose text COLLATE pg_catalog."default", '
-            'start_time text COLLATE pg_catalog."default", '
-            'CONSTRAINT game_pkey PRIMARY KEY (id) '
-            ')')
-c.commit()
-print('game done!')
-sql.execute('CREATE TABLE add_balance_requests '
-            '('
-            'id serial NOT NULL, '
-            'admin_user_id integer NOT NULL, '
-            'user_id integer NOT NULL, '
-            'sum real, '
-            'currency text COLLATE pg_catalog."default", '
-            'date text COLLATE pg_catalog."default", '
-            'done integer NOT NULL DEFAULT 0, '
-            'CONSTRAINT add_balance_requests_pkey PRIMARY KEY (id) '
-            ')')
-c.commit()
-print('add_balance_requests done!')
-sql.execute('CREATE TABLE feedback'
-            '('
-            'id serial NOT NULL, '
-            'feedback_user_id bigint NOT NULL, '
-            'date text COLLATE pg_catalog."default" NOT NULL, '
-            'text text COLLATE pg_catalog."default", '
-            'author bigint NOT NULL, '
-            'author_name text COLLATE pg_catalog."default" NOT NULL, '
-            'message_id bigint, '
-            'query_id bigint, '
-            'CONSTRAINT feedback_pkey PRIMARY KEY (id) '
-            ')')
-c.commit()
-print('feedback done!')
+# sql.execute('CREATE TABLE game '
+#             '( '
+#             'id serial NOT NULL, '
+#             'opponent1_id integer, '
+#             'opponent2_id integer, '
+#             'opponent1_choose text COLLATE pg_catalog."default", '
+#             'opponent2_choose text COLLATE pg_catalog."default", '
+#             'start_time text COLLATE pg_catalog."default", '
+#             'CONSTRAINT game_pkey PRIMARY KEY (id) '
+#             ')')
+# c.commit()
+# print('game done!')
+# sql.execute('CREATE TABLE add_balance_requests '
+#             '('
+#             'id serial NOT NULL, '
+#             'admin_user_id integer NOT NULL, '
+#             'user_id integer NOT NULL, '
+#             'sum real, '
+#             'currency text COLLATE pg_catalog."default", '
+#             'date text COLLATE pg_catalog."default", '
+#             'done integer NOT NULL DEFAULT 0, '
+#             'CONSTRAINT add_balance_requests_pkey PRIMARY KEY (id) '
+#             ')')
+# c.commit()
+# print('add_balance_requests done!')
+# sql.execute('CREATE TABLE feedback'
+#             '('
+#             'id serial NOT NULL, '
+#             'feedback_user_id bigint NOT NULL, '
+#             'date text COLLATE pg_catalog."default" NOT NULL, '
+#             'text text COLLATE pg_catalog."default", '
+#             'author bigint NOT NULL, '
+#             'author_name text COLLATE pg_catalog."default" NOT NULL, '
+#             'message_id bigint, '
+#             'query_id bigint, '
+#             'CONSTRAINT feedback_pkey PRIMARY KEY (id) '
+#             ')')
+# c.commit()
+# print('feedback done!')
 print('db_create.py successfully executed!')

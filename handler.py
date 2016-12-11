@@ -352,7 +352,8 @@ def diamond_reload(bot):
         for row in rows:
             user_id = row[0]
             lang = row[1]
-            bot.sendMessage(user_id, text=lang_dicts.diamond_gift_answer[lang], reply_markup={'resize_keyboard': True, 'one_time_keyboard': False, 'keyboard': [[{'text': lang_dicts.diamond_gift_button[lang]}]]})
+            print(user_id)
+            bot.sendMessage(60558942, text=lang_dicts.diamond_gift_answer[lang], reply_markup={'resize_keyboard': True, 'one_time_keyboard': False, 'keyboard': [[{'text': lang_dicts.diamond_gift_button[lang]}]]})
             sql.execute("UPDATE users SET state='GIFT', diamond_request_time = null WHERE user_id = %s;" % user_id)
             c.commit()
     except IndexError:

@@ -13,16 +13,12 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 logger = logging.getLogger(__name__)
 
 
-def start(bot, update):
+def test(bot, update):
     bot.sendMessage(update.message.chat_id, text='Test succeed')
 
 
 def error(bot, update, error):
     logger.warn('Update "%s" caused error "%s"' % (update, error))
-
-
-def test(bot, update):
-    bot.sendMessage(update.message.chat_id, text='Test succeed')
 
 
 def setup(webhook_url=None):
@@ -37,6 +33,7 @@ def setup(webhook_url=None):
         bot = updater.bot
         dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", message_checker))
+    dp.add_handler(CommandHandler("test", test))
     dp.add_handler(CommandHandler("support", message_checker))
     dp.add_handler(MessageHandler([Filters.text], message_checker))
     dp.add_handler(CallbackQueryHandler(callback_checker))

@@ -4,14 +4,14 @@ import psycopg2 as db
 from os import environ
 
 host = environ['POSTGRESQL_SERVICE_HOST']
-# c = db.connect("host='ec2-54-247-119-94.eu-west-1.compute.amazonaws.com'"
-#                "dbname='dbaj1fb1ian3ve' "
-#                "user='zlkllrubxwxjik' "
-#                "password='EH_UQI5UZMpBpBJb7t7f-Xabfn'")
 c = db.connect("host='%s'"
                "dbname='sampledb' "
                "user='userL0G' "
                "password='iXMTnXJnPhOCGn4Q'" % host)
+# c = db.connect("host='ec2-54-247-119-94.eu-west-1.compute.amazonaws.com'"
+#                "dbname='dbaj1fb1ian3ve' "
+#                "user='zlkllrubxwxjik' "
+#                "password='EH_UQI5UZMpBpBJb7t7f-Xabfn'")
 # c = db.connect(database="luckyhandbot.db", check_same_thread=False)
 
 sql = c.cursor()
